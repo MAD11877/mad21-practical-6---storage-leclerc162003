@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     User user;
     private TextView txtName;
     private TextView cl;
+
     DBHandler dbHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("debug", "create");
         this.txtName = findViewById(R.id.txtName);
         this.cl = findViewById(R.id.cl);
+        Button button = (Button) findViewById(R.id.btnFollow);
         Intent receive = getIntent();
         dbHandler = new DBHandler(MainActivity.this);
 //
@@ -35,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
         this.txtName.setText(user.getName() );
         this.cl.setText(user.getDescription());
 
-
-        Button button = (Button) findViewById(R.id.btnFollow);
         if(user.followed == false)
         {
             button.setText("Follow");
