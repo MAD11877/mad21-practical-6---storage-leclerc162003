@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     //User user = new User("pp", receive.getStringExtra("Des"), 1, false);
     User user;
-    private TextView textBiew;
+    private TextView txtName;
     private TextView cl;
     DBHandler dbHandler;
     @Override
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("debug", "create");
-        this.textBiew = findViewById(R.id.textBiew);
+        this.txtName = findViewById(R.id.txtName);
         this.cl = findViewById(R.id.cl);
         Intent receive = getIntent();
         dbHandler = new DBHandler(MainActivity.this);
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         int id = receive.getIntExtra("id",0);
         user = ListActivity.userList.get(id);
 
-        this.textBiew.setText(user.getName() );
+        this.txtName.setText(user.getName() );
         this.cl.setText(user.getDescription());
 
 

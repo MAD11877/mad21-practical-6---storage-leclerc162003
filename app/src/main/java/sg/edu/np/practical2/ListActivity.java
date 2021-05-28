@@ -16,7 +16,7 @@ public class ListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         DBHandler db = new DBHandler(this);
-        userList = db.getUsers("*");
+        userList = db.getUsers();
 //        for (int i=0 ; i<20; i++){
 //            User u = new User();
 //            Random rand = new Random();

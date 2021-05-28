@@ -42,7 +42,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList<User> getUsers(String name){
+    public ArrayList<User> getUsers(){
         SQLiteDatabase db = getWritableDatabase();
         //Cursor cursor = db.rawQuery("select * from users where name = \""+ name + "\"", null);
         Cursor cursor = db.rawQuery("select * from users", null);
