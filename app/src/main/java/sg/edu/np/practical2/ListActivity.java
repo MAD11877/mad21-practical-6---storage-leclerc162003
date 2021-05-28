@@ -16,25 +16,27 @@ public class ListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         DBHandler db = new DBHandler(this);
-        userList = db.getUsers();
-//        for (int i=0 ; i<20; i++){
-//            User u = new User();
-//            Random rand = new Random();
-//            String txt = String.valueOf(rand.nextInt());
-//            int randomFollow = rand.nextInt((1 - 0) + 1) + 0;
-//            u.setId(rand.nextInt());
-//            u.setName("Name" + txt);
-//            u.setDescription("Description" + txt);
-//            u.setId(i+1);
-//            if (randomFollow == 1){
-//                u.setFollowed(true);
-//            }
-//            else{
-//                u.setFollowed(false);
-//            }
+        //userList = db.getUsers();
+
+        for (int i=0 ; i<20; i++){
+            User u = new User();
+            Random rand = new Random();
+            String txt = String.valueOf(rand.nextInt());
+            int randomFollow = rand.nextInt((1 - 0) + 1) + 0;
+            u.setId(rand.nextInt());
+            u.setName("Name" + txt);
+            u.setDescription("Description" + txt);
+            u.setId(i+1);
+            if (randomFollow == 1){
+                u.setFollowed(true);
+            }
+            else{
+                u.setFollowed(false);
+            }
 //            data.add(u);
-//            db.addUser(u);
-//        }
+            db.addUser(u);
+        }
+        userList = db.getUsers();
 
         RecyclerView rv = findViewById(R.id.rv);
         UsersAdapter adapter = new UsersAdapter(this, userList);
