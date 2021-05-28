@@ -15,6 +15,7 @@ public class ListActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        RecyclerView rv = findViewById(R.id.rv);
         DBHandler db = new DBHandler(this);
         //userList = db.getUsers();
 
@@ -38,7 +39,7 @@ public class ListActivity extends AppCompatActivity{
         }
         userList = db.getUsers();
 
-        RecyclerView rv = findViewById(R.id.rv);
+        //RecyclerView rv = findViewById(R.id.rv);
         UsersAdapter adapter = new UsersAdapter(this, userList);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
