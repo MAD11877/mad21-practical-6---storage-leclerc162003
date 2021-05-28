@@ -17,10 +17,10 @@ import java.util.Random;
 
 public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
     Context context;
-    ArrayList<User> data;
+    ArrayList<User> userList;
     public UsersAdapter(Context c, ArrayList<User> d){
         context = c;
-        data = d;
+        userList = d;
 
     }
     @NonNull
@@ -40,7 +40,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        User u = data.get(position);
+        User u = userList.get(position);
 
         holder.name.setText(u.getName());
         holder.description.setText(u.getDescription());
@@ -84,12 +84,12 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return userList.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        String name = data.get(position).getName();
+        String name = userList.get(position).getName();
         int ld = Integer.parseInt(name.substring(name.length() - 1));
         if (ld == 7)
             return 0;

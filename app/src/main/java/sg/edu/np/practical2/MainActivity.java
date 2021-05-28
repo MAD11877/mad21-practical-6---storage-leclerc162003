@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 //
         //User user = new User(receive.getStringExtra("Name"), receive.getStringExtra("Des"), 1, false);
         int id = receive.getIntExtra("id",0);
-        user = ListActivity.data.get(id);
+        user = ListActivity.userList.get(id);
 
         this.textBiew.setText(user.getName() );
         this.cl.setText(user.getDescription());

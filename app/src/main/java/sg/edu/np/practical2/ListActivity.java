@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ListActivity extends AppCompatActivity{
-    public static ArrayList<User> data = new ArrayList<User>();
+    public static ArrayList<User> userList = new ArrayList<User>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         DBHandler db = new DBHandler(this);
-        data = db.getUsers("*");
+        userList = db.getUsers("*");
 //        for (int i=0 ; i<20; i++){
 //            User u = new User();
 //            Random rand = new Random();
@@ -37,7 +37,7 @@ public class ListActivity extends AppCompatActivity{
 //        }
 
         RecyclerView rv = findViewById(R.id.rv);
-        UsersAdapter adapter = new UsersAdapter(this, data);
+        UsersAdapter adapter = new UsersAdapter(this, userList);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
