@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DBHandler extends SQLiteOpenHelper {
 
     public DBHandler(@Nullable Context context) {
-        super(context, "user", null, 4);
+        super(context, "user", null, 5);
     }
 
     @Override
