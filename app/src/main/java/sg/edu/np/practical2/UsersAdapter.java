@@ -56,12 +56,13 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
                 builder.setPositiveButton("VIEW", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int id){
                         Intent i = new Intent(context, MainActivity.class);
-                        Bundle extras = new Bundle();
+                        //Bundle extras = new Bundle();
 //                        extras.putString("Name", u.getName());
 //                        extras.putString("Des", u.getDescription());
 //                        String string = String.valueOf(u.getId());
-                        extras.putInt("id", position);
-                        i.putExtras(extras);
+                        //extras.putInt("id", position);
+                        i.putExtra("id", position);
+                        //i.putExtras(extras);
                         context.startActivity(i);
 
 

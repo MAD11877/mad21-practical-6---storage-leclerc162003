@@ -15,7 +15,7 @@ public class ListActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        RecyclerView rv = findViewById(R.id.rv);
+        //RecyclerView rv = findViewById(R.id.rv);
         DBHandler db = new DBHandler(this);
         userList = db.getUsers();
         if (userList.size() != 20){
@@ -40,6 +40,11 @@ public class ListActivity extends AppCompatActivity{
             }
             userList = db.getUsers();
         }
+        RecyclerView rv = findViewById(R.id.rv);
+        UsersAdapter adapter = new UsersAdapter(this, userList);
+        LinearLayoutManager lm = new LinearLayoutManager(this);
+        rv.setLayoutManager(lm);
+        rv.setAdapter(adapter);
 
 //        for (int i=0 ; i<20; i++){
 //            User u = new User();
@@ -60,12 +65,11 @@ public class ListActivity extends AppCompatActivity{
 //            db.addUser(u);
 //        }
         //userList = db.getUsers();
-
-        //RecyclerView rv = findViewById(R.id.rv);
-        UsersAdapter adapter = new UsersAdapter(this, userList);
-        LinearLayoutManager lm = new LinearLayoutManager(this);
-        rv.setLayoutManager(lm);
-        rv.setAdapter(adapter);
+//        RecyclerView rv = findViewById(R.id.rv);
+//        UsersAdapter adapter = new UsersAdapter(this, userList);
+//        LinearLayoutManager lm = new LinearLayoutManager(this);
+//        rv.setLayoutManager(lm);
+//        rv.setAdapter(adapter);
 
 
 
