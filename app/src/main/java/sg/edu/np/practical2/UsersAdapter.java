@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -44,7 +45,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
         holder.name.setText(u.getName());
         holder.description.setText(u.getDescription());
-        holder.img.setOnClickListener(new View.OnClickListener() {
+        ImageView image = holder.img;
+        image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -59,8 +61,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
                         i.putExtra("id", position);
                         //i.putExtras(extras);
                         context.startActivity(i);
-
-
 
                     }
                 });
