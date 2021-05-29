@@ -11,9 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    //Intent receive = getIntent();
 
-    //User user = new User("pp", receive.getStringExtra("Des"), 1, false);
     User user;
     private TextView txtName;
     private TextView cl;
@@ -24,16 +22,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.btnFollow);
-       // Log.d("debug", "create");
         this.txtName = findViewById(R.id.txtName);
         this.cl = findViewById(R.id.cl);
         Intent receive = getIntent();
         dbHandler = new DBHandler(MainActivity.this);
-//
-        //User user = new User(receive.getStringExtra("Name"), receive.getStringExtra("Des"), 1, false);
         int id = receive.getIntExtra("id",0);
         user = ListActivity.userList.get(id);
-
         this.txtName.setText(user.getName() );
         this.cl.setText(user.getDescription());
 
@@ -48,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         button.setOnClickListener(v -> {
-            //int status = (Integer) v.getTag();
             if (user.followed == false){
                 Context context = getApplicationContext();
                 CharSequence text = "followed";
@@ -74,37 +67,8 @@ public class MainActivity extends AppCompatActivity {
             }
             dbHandler.updateUser(user);
         });
-//        ArrayList<User> data = new ArrayList<User>();
-//        for (int i=0 ; i<20; i++){
-//            User u = new User();
-//            Random rand = new Random();
-//            String txt = String.valueOf(rand.nextInt());
-//            u.setName("Name" + txt);
-//            u.setDescription(txt);
-//            data.add(u);
-//
-//        }
-//        RecyclerView rv = findViewById(R.id.scroll);
-
-
-
-
-
-
 
     }
-
-//    private void setUser(User user){
-//        this.user = user;
-//        this.updateUserInfo();
-//
-//    }
-//
-//    private void updateUserInfo() {
-//        //Intent receive = getIntent();
-//        this.textBiew.setText(user.getName() );
-//        this.cl.setText(user.getDescription());
-//    }
 
 
 
