@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("debug", "create");
+        Button button = (Button) findViewById(R.id.btnFollow);
+       // Log.d("debug", "create");
         this.txtName = findViewById(R.id.txtName);
         this.cl = findViewById(R.id.cl);
-        Button button = (Button) findViewById(R.id.btnFollow);
         Intent receive = getIntent();
         dbHandler = new DBHandler(MainActivity.this);
 //
