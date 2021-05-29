@@ -40,7 +40,7 @@ public class ListActivity extends AppCompatActivity{
             }
             userList = db.getUsers();
         }
-        RecyclerView rv = findViewById(R.id.rv);
+        RecyclerView rv = findViewById(R.id.RV);
         UsersAdapter adapter = new UsersAdapter(this, userList);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
