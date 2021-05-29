@@ -53,7 +53,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
                 builder.setTitle("Profile");
                 builder.setMessage(u.getName());
                 builder.setCancelable(true);
-                builder.setPositiveButton("View", new DialogInterface.OnClickListener(){
+                builder.setPositiveButton("VIEW", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int id){
                         Intent i = new Intent(context, MainActivity.class);
                         Bundle extras = new Bundle();
