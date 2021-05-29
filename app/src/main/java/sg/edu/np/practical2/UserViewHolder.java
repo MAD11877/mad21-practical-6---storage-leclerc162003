@@ -7,9 +7,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class UserViewHolder extends RecyclerView.ViewHolder {
-    ImageView img;
-    TextView name;
-    TextView description;
+    public ImageView img;
+    public TextView name;
+    public TextView description;
     public UserViewHolder(View itemView) {
         super(itemView);
         name = itemView.findViewById(R.id.name);
